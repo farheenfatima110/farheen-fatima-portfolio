@@ -11,17 +11,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0f0a1a;
-    --bg-alt:#150f24;
+    --bg:#09090b;
+    --bg-alt:#111113;
     --surface:rgba(255,255,255,0.045);
     --surface-2:rgba(255,255,255,0.07);
     --border:rgba(255,255,255,0.09);
     --border-hover:rgba(255,255,255,0.18);
-    --text:#f3eefc;
-    --text-soft:#b6a9c9;
-    --text-mute:#7d6f92;
-    --accent-1:#ec4899;
-    --accent-2:#fbbf24;
+    --text:#fafafa;
+    --text-soft:#a1a1aa;
+    --text-mute:#71717a;
+    --accent-1:#10b981;
+    --accent-2:#10b981;
     --gradient:linear-gradient(135deg,var(--accent-1),var(--accent-2));
     --radius:16px;
     --radius-sm:10px;
@@ -78,7 +78,7 @@
   }
   .nav .container{display:flex;align-items:center;justify-content:space-between;}
   .brand{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:16px;}
-  .brand-mark{width:34px;height:34px;border-radius:9px;background:var(--gradient);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;box-shadow:0 6px 18px -4px rgba(236,72,153,.6);}
+  .brand-mark{width:34px;height:34px;border-radius:9px;background:var(--gradient);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;box-shadow:0 6px 18px -4px rgba(16,185,129,.6);}
   .nav-links{display:flex;align-items:center;gap:4px;}
   .nav-links a{
     padding:9px 16px;border-radius:999px;font-size:14px;font-weight:500;color:var(--text-soft);
@@ -106,8 +106,8 @@
     transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s,border-color .25s,opacity .25s;
     white-space:nowrap;
   }
-  .btn-primary{background:var(--gradient);color:#0f0a1a;box-shadow:0 10px 30px -10px rgba(236,72,153,.7);}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px -8px rgba(236,72,153,.85);}
+  .btn-primary{background:var(--gradient);color:#09090b;box-shadow:0 10px 30px -10px rgba(16,185,129,.7);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px -8px rgba(16,185,129,.85);}
   .btn-ghost{background:var(--surface);border-color:var(--border);color:var(--text);}
   .btn-ghost:hover{background:var(--surface-2);border-color:var(--border-hover);transform:translateY(-2px);}
   .btn-sm{padding:9px 16px;font-size:13.5px;}
@@ -122,8 +122,8 @@
   #hero-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55;z-index:0;}
   .hero::after{
     content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-    background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(236,72,153,.16),transparent 70%),
-               radial-gradient(ellipse 40% 40% at 85% 30%,rgba(251,191,36,.10),transparent 70%);
+    background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(16,185,129,.16),transparent 70%),
+               radial-gradient(ellipse 40% 40% at 85% 30%,rgba(16,185,129,.10),transparent 70%);
   }
   .hero-inner{position:relative;z-index:1;max-width:780px;}
   .hero-name{font-size:15px;font-weight:600;color:var(--text-soft);letter-spacing:.02em;margin-bottom:18px;}
@@ -170,11 +170,11 @@
     padding:26px;display:flex;flex-direction:column;transition:transform .35s var(--ease),border-color .35s,box-shadow .35s;
   }
   .project-card:hover{transform:translateY(-6px);border-color:var(--border-hover);box-shadow:var(--shadow);}
-  .project-icon{width:44px;height:44px;border-radius:11px;background:var(--gradient);display:flex;align-items:center;justify-content:center;color:#0f0a1a;margin-bottom:18px;}
+  .project-icon{width:44px;height:44px;border-radius:11px;background:var(--gradient);display:flex;align-items:center;justify-content:center;color:#09090b;margin-bottom:18px;}
   .project-card h3{font-size:17.5px;font-weight:700;margin-bottom:10px;}
   .project-card .desc{color:var(--text-soft);font-size:14px;margin-bottom:16px;flex-grow:0;}
   .tech-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
-  .tech-badge{padding:4px 10px;border-radius:6px;background:rgba(236,72,153,0.1);border:1px solid rgba(236,72,153,0.25);font-size:11.5px;color:#f9a8d4;font-weight:500;}
+  .tech-badge{padding:4px 10px;border-radius:6px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25);font-size:11.5px;color:#6ee7b7;font-weight:500;}
   .feature-list{display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:22px;}
   .feature-list li{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--text-soft);}
   .feature-list .icon{color:var(--accent-2);margin-top:3px;width:14px;height:14px;}
@@ -187,7 +187,7 @@
   .timeline-icon{width:46px;height:46px;border-radius:12px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--accent-2);flex-shrink:0;}
   .timeline-body h3{font-size:16.5px;font-weight:700;margin-bottom:4px;}
   .timeline-body .org{color:var(--text-soft);font-size:14.5px;margin-bottom:6px;}
-  .timeline-body .period{display:inline-block;font-size:12.5px;color:var(--accent-2);background:rgba(251,191,36,.09);border:1px solid rgba(251,191,36,.22);padding:4px 10px;border-radius:999px;font-weight:600;}
+  .timeline-body .period{display:inline-block;font-size:12.5px;color:var(--accent-2);background:rgba(16,185,129,.09);border:1px solid rgba(16,185,129,.22);padding:4px 10px;border-radius:999px;font-weight:600;}
 
   /* Certifications */
   .cert-empty{
@@ -318,7 +318,7 @@
         <span class="word" id="role-word">Junior AI Engineer</span>
       </div>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View Projects <svg class="icon" style="stroke:#0f0a1a"><use href="#i-arrow-right"/></svg></a>
+        <a href="#projects" class="btn btn-primary">View Projects <svg class="icon" style="stroke:#09090b"><use href="#i-arrow-right"/></svg></a>
         <a href="https://github.com/farheenfatima110" target="_blank" rel="noopener" class="btn btn-ghost"><svg class="icon"><use href="#i-github"/></svg> GitHub</a>
         <a href="https://www.linkedin.com/in/farheen-fatima-4b010b398/" target="_blank" rel="noopener" class="btn btn-ghost" id="linkedin-hero"><svg class="icon"><use href="#i-linkedin"/></svg> LinkedIn</a>
       </div>
@@ -407,7 +407,7 @@
 
         <!-- Project 1 -->
         <div class="project-card reveal">
-          <span class="project-icon"><svg class="icon" style="stroke:#0f0a1a"><use href="#i-barchart"/></svg></span>
+          <span class="project-icon"><svg class="icon" style="stroke:#09090b"><use href="#i-barchart"/></svg></span>
           <h3>AI Data Analysis Assistant</h3>
           <p class="desc">An AI-powered data analysis app that lets users upload a CSV file and explore it through a simple, interactive interface — combining Python calculations with natural-language explanations.</p>
           <div class="tech-row">
@@ -427,7 +427,7 @@
 
         <!-- Project 2 -->
         <div class="project-card reveal">
-          <span class="project-icon"><svg class="icon" style="stroke:#0f0a1a"><use href="#i-activity"/></svg></span>
+          <span class="project-icon"><svg class="icon" style="stroke:#09090b"><use href="#i-activity"/></svg></span>
           <h3>Food Delivery Analytics</h3>
           <p class="desc">An exploratory data analysis project on a real-world food delivery dataset of 38,964 orders, uncovering how traffic, weather and distance affect delivery time.</p>
           <div class="tech-row">
@@ -447,7 +447,7 @@
 
         <!-- Project 3 -->
         <div class="project-card reveal">
-          <span class="project-icon"><svg class="icon" style="stroke:#0f0a1a"><use href="#i-cpu"/></svg></span>
+          <span class="project-icon"><svg class="icon" style="stroke:#09090b"><use href="#i-cpu"/></svg></span>
           <h3>Personal AI Assistant with Tools</h3>
           <p class="desc">A CrewAI-based personal assistant that takes a natural-language request and works through it itself — picking the right tool for the job from a set of eight, from study-note search to web research and memory.</p>
           <div class="tech-row">
@@ -462,13 +462,13 @@
           </ul>
           <div class="project-actions">
             <a href="https://github.com/farheenfatima110/personal_ai_assistant" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><svg class="icon"><use href="#i-github"/></svg> View on GitHub</a>
-            <a href="https://crewai-study-copilot.streamlit.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><svg class="icon" style="stroke:#0f0a1a"><use href="#i-external"/></svg> Live Demo</a>
+            <a href="https://crewai-study-copilot.streamlit.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><svg class="icon" style="stroke:#09090b"><use href="#i-external"/></svg> Live Demo</a>
           </div>
         </div>
 
         <!-- Project 4 -->
         <div class="project-card reveal">
-          <span class="project-icon"><svg class="icon" style="stroke:#0f0a1a"><use href="#i-share"/></svg></span>
+          <span class="project-icon"><svg class="icon" style="stroke:#09090b"><use href="#i-share"/></svg></span>
           <h3>AI Multi-Agent Career Guidance System</h3>
           <p class="desc">A multi-agent CrewAI system that helps users explore career paths by researching roles, analyzing the skills they require, and turning that into practical guidance.</p>
           <div class="tech-row">
@@ -487,7 +487,7 @@
 
         <!-- Project 5 -->
         <div class="project-card reveal">
-          <span class="project-icon"><svg class="icon" style="stroke:#0f0a1a"><use href="#i-receipt"/></svg></span>
+          <span class="project-icon"><svg class="icon" style="stroke:#09090b"><use href="#i-receipt"/></svg></span>
           <h3>AI-Powered Receipt Analyzer</h3>
           <p class="desc">An AI application that reads receipts and turns them into structured, useful information — extracted details, categorized expenses and a short spending insight.</p>
           <div class="tech-row">
@@ -706,7 +706,7 @@
           var dx = points[a2].x-points[b].x, dy = points[a2].y-points[b].y;
           var dist = Math.sqrt(dx*dx+dy*dy);
           if(dist < 140){
-            ctx.strokeStyle = 'rgba(236,72,153,'+(0.16*(1-dist/140))+')';
+            ctx.strokeStyle = 'rgba(16,185,129,'+(0.16*(1-dist/140))+')';
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(points[a2].x, points[a2].y);
@@ -716,7 +716,7 @@
         }
       }
       for(var c=0;c<points.length;c++){
-        ctx.fillStyle = 'rgba(251,191,36,0.55)';
+        ctx.fillStyle = 'rgba(16,185,129,0.55)';
         ctx.beginPath();
         ctx.arc(points[c].x, points[c].y, 1.6, 0, Math.PI*2);
         ctx.fill();
