@@ -50,6 +50,8 @@
   ul{margin:0;padding:0;list-style:none;}
   img,svg{display:block;}
   .icon{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+  .noise{position:fixed;inset:0;z-index:998;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");background-size:180px 180px;}
+  .hero-grid{position:absolute;inset:0;z-index:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:26px 26px;-webkit-mask-image:radial-gradient(ellipse 65% 55% at 50% 25%,#000 40%,transparent 78%);mask-image:radial-gradient(ellipse 65% 55% at 50% 25%,#000 40%,transparent 78%);}
   .container{max-width:var(--container);margin:0 auto;padding:0 24px;}
   section{position:relative;padding:120px 0;}
   .section-head{max-width:640px;margin:0 auto 56px;text-align:center;}
@@ -74,7 +76,7 @@
   }
   .nav.scrolled{
     padding:12px 0;background:rgba(5,7,13,0.72);backdrop-filter:blur(16px) saturate(140%);
-    border-bottom:1px solid var(--border);
+    border-bottom:1px solid var(--border);box-shadow:0 1px 0 0 rgba(16,185,129,.2);
   }
   .nav .container{display:flex;align-items:center;justify-content:space-between;}
   .brand{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:16px;}
@@ -106,8 +108,8 @@
     transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s,border-color .25s,opacity .25s;
     white-space:nowrap;
   }
-  .btn-primary{background:var(--gradient);color:#09090b;box-shadow:0 10px 30px -10px rgba(16,185,129,.7);}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px -8px rgba(16,185,129,.85);}
+  .btn-primary{background:var(--gradient);color:#09090b;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 30px -10px rgba(16,185,129,.7);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 14px 34px -8px rgba(16,185,129,.85);}
   .btn-ghost{background:var(--surface);border-color:var(--border);color:var(--text);}
   .btn-ghost:hover{background:var(--surface-2);border-color:var(--border-hover);transform:translateY(-2px);}
   .btn-sm{padding:9px 16px;font-size:13.5px;}
@@ -126,6 +128,9 @@
                radial-gradient(ellipse 40% 40% at 85% 30%,rgba(16,185,129,.10),transparent 70%);
   }
   .hero-inner{position:relative;z-index:1;max-width:780px;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.3);font-size:13px;font-weight:600;color:var(--accent-2);margin-bottom:22px;}
+  .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 8px var(--accent-2);animation:pulse 2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
   .hero-name{font-size:15px;font-weight:600;color:var(--text-soft);letter-spacing:.02em;margin-bottom:18px;}
   .hero-name span{color:var(--text);}
   .hero h1{font-size:clamp(34px,5.2vw,58px);font-weight:800;margin-bottom:20px;}
@@ -155,8 +160,8 @@
 
   /* Skills */
   .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  .skill-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;transition:border-color .3s,transform .3s var(--ease);}
-  .skill-card:hover{border-color:var(--border-hover);transform:translateY(-4px);}
+  .skill-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;transition:border-color .3s,transform .3s var(--ease),box-shadow .3s;box-shadow:inset 0 1px 0 rgba(255,255,255,.05);}
+  .skill-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 20px 40px -24px rgba(16,185,129,.4);}
   .skill-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
   .skill-icon{width:38px;height:38px;border-radius:10px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;color:var(--accent-2);}
   .skill-head h3{font-size:16px;font-weight:600;}
@@ -168,9 +173,10 @@
   .project-card{
     background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
     padding:26px;display:flex;flex-direction:column;transition:transform .35s var(--ease),border-color .35s,box-shadow .35s;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
   }
-  .project-card:hover{transform:translateY(-6px);border-color:var(--border-hover);box-shadow:var(--shadow);}
-  .project-icon{width:44px;height:44px;border-radius:11px;background:var(--gradient);display:flex;align-items:center;justify-content:center;color:#09090b;margin-bottom:18px;}
+  .project-card:hover{transform:translateY(-6px);border-color:var(--border-hover);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),var(--shadow),0 0 44px -22px rgba(16,185,129,.55);}
+  .project-icon{width:44px;height:44px;border-radius:11px;background:var(--gradient);display:flex;align-items:center;justify-content:center;color:#09090b;margin-bottom:18px;box-shadow:0 0 0 4px rgba(16,185,129,.08),0 8px 18px -8px rgba(16,185,129,.55);}
   .project-card h3{font-size:17.5px;font-weight:700;margin-bottom:10px;}
   .project-card .desc{color:var(--text-soft);font-size:14px;margin-bottom:16px;flex-grow:0;}
   .tech-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
@@ -245,6 +251,7 @@
 </style>
 </head>
 <body>
+<div class="noise" aria-hidden="true"></div>
 <a href="#main" class="skip-link">Skip to content</a>
 
 <!-- Icon sprite -->
@@ -307,8 +314,10 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
+    <div class="hero-grid" aria-hidden="true"></div>
     <canvas id="hero-canvas"></canvas>
     <div class="container hero-inner">
+      <span class="hero-badge"><span class="dot"></span> Open to Junior AI/ML &amp; Data Roles</span>
       <p class="hero-name">Hi, I'm <span>Farheen Fatima</span></p>
       <h1>Building Intelligent Solutions with <span class="grad">AI, Data &amp; Automation</span></h1>
       <p class="hero-role">AI &amp; Data Science Student · Aspiring AI Engineer · Machine Learning &amp; Data Science Enthusiast</p>
